@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+            <input type="text" v-model = "first" > +
+            <input type="text" v-model = "last" >  =
+            <input type="text" v-model = "full">
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                first:'',
+                last:'',
+                full:''
+            },
+            watch: {
+                'first':function(){
+                    this.full = this.first + this.last
+                },
+                'last':function(){
+                    this.full = this.first + this.last
+                }
+            },
+        })
+    </script>
+</body>
+</html>
